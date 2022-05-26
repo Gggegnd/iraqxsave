@@ -130,5 +130,5 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
         await edit.delete()
         
 async def get_bulk_msg(userbot, client, sender, msg_link, i):
-    x = await client.send_message(sender, "Processing!")
+    x = await client.send_message(sender, "يـعـالـج! 🔁!")
     await get_msg(userbot, client, sender, x.message_id, msg_link, i) 
