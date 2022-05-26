@@ -46,13 +46,13 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
             msg = await userbot.get_messages(chat, msg_id)
             if msg.media:
                 if 'web_page' in msg.media:
-                    edit = await client.edit_message_text(sender, edit_id, "Cloning.")
+                    edit = await client.edit_message_text(sender, edit_id, "جـار الجـلب انتظر قليلاً.")
                     await client.send_message(sender, msg.text.markdown)
                     await edit.delete()
                     return
             if not msg.media:
                 if msg.text:
-                    edit = await client.edit_message_text(sender, edit_id, "Cloning.")
+                    edit = await client.edit_message_text(sender, edit_id, "جـار الجـلب انتظر قليلاً.")
                     await client.send_message(sender, msg.text.markdown)
                     await edit.delete()
                     return
@@ -120,7 +120,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i):
             await client.edit_message_text(sender, edit_id, f'Failed to save: `{msg_link}`')
             return 
     else:
-        edit = await client.edit_message_text(sender, edit_id, "Cloning.")
+        edit = await client.edit_message_text(sender, edit_id, "جـار الجـلب انتظر قليلاً.")
         chat =  msg_link.split("/")[-2]
         try:
             await client.copy_message(int(sender), chat, msg_id)
